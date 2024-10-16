@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Запустите миграцию
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table):voil {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();//автоинкрементный 
             $table->string("name");//название
             $table->text('description');//описание
@@ -23,7 +23,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Отмените миграцию в обратном порядке
      */
     public function down(): void
     {

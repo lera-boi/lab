@@ -9,8 +9,14 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all(); // Получаем все продукты из базы данных
-        return view('products.index', compact('products')); // Передаем данные в представление
+        $products = Product::all();
+        return view('index', compact('products'));
+    }
+
+    public function show($id)
+    {
+        $product = Product::findOrFail($id); // Поиск товара по ID
+        return view('show', compact('product'));
     }
 }
 
